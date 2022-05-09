@@ -56,7 +56,11 @@ class AllQueryUD
                            System.out.println("Enter Book ID to select Record");
                            int bn3=sc.nextInt();
                            sql="select bnum,bname from Library where bnum="+bn3+"";
-                           System.out.println(sql);
+                           ResultSet rs;
+                           rs=stmt.executeQuery(sql);
+                           rs.next();
+                           System.out.println("Book Number is: "+rs.getInt("bnum"));
+                           System.out.println("Book Number is: "+rs.getString("bname"));
                            break;
                            
                 case 5:    System.out.println("You have Exit from Application");
